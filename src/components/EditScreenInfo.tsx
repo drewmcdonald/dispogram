@@ -1,5 +1,4 @@
 import { Text, View } from "react-native";
-import Colors from "../constants/Colors";
 import { ExternalLink } from "./ExternalLink";
 import { MonoText } from "./MonoText/MonoText";
 

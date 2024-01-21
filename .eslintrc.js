@@ -15,10 +15,12 @@ module.exports = {
   overrides: [],
   parser: "@typescript-eslint/parser",
   parserOptions: {
+    project: "./tsconfig.json",
     ecmaVersion: "latest",
     sourceType: "module",
   },
   plugins: ["react", "react-hooks", "@typescript-eslint", "prettier"],
+  ignorePatterns: [".eslintrc.js", "jest.config.js"],
   rules: {
     "prettier/prettier": "error",
     indent: ["error", 2, { SwitchCase: 1 }],
@@ -31,6 +33,10 @@ module.exports = {
     "react/prop-types": "off",
     "react/react-in-jsx-scope": "off",
     "react/no-unescaped-entities": "off",
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      { varsIgnorePattern: "^_", argsIgnorePattern: "^_" },
+    ],
   },
   settings: {
     react: {

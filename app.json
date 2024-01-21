@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "blog-post-app",
-    "slug": "blog-post-app",
+    "name": "dispogram",
+    "slug": "dispogram",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -16,15 +16,15 @@
     "ios": {
       "supportsTablet": true
     },
-    "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+    "plugins": ["expo-font", "expo-router"],
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "8447d10c-c391-48db-9769-392945257471"
       }
     },
-    "web": {
-      "bundler": "metro",
-      "favicon": "./assets/images/favicon.png"
-    }
+    "owner": "drewmcdonald"
   }
 }

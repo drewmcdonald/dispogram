@@ -8,7 +8,7 @@ import {
   View,
   Text,
 } from "react-native";
-import { addItem } from "../../src/api";
+import { addItem } from "@dispogram/api";
 
 export default function TabTwoScreen() {
   const [text, onChangeText] = useState<string>("");
@@ -17,11 +17,11 @@ export default function TabTwoScreen() {
   const { mutate } = useMutation({
     mutationFn: addItem,
     onSuccess: () => {
-      queryClient.invalidateQueries(["items"]);
+      void queryClient.invalidateQueries({ queryKey: ["items"] });
     },
   });
 
-  async function addNewItem(event: GestureResponderEvent) {
+  function addNewItem(_: GestureResponderEvent) {
     mutate({ id: Math.random(), content: text });
     onChangeText("");
   }

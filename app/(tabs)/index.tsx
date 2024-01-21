@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { FlatList, SafeAreaView, Text, View } from "react-native";
-import { getItems, IItem } from "../../src/api";
+import { getItems, IItem } from "@dispogram/api";
 
 const Item: React.FC<{ item: IItem }> = ({ item }) => {
   return (
@@ -11,10 +11,7 @@ const Item: React.FC<{ item: IItem }> = ({ item }) => {
 };
 
 export default function ItemsScreen() {
-  const { data } = useQuery({
-    queryFn: getItems,
-    queryKey: ["items"],
-  });
+  const { data } = useQuery({ queryKey: ["items"], queryFn: getItems });
   return (
     <SafeAreaView className="flex-1 items-center justify-center bg-white">
       <Text className="text-xl font-bold my-5">View Items</Text>
